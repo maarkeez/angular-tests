@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Bootstrap instalation:
+Run the following command
+```
+npm install --save bootstrap
+```
+
+After that, add the following line to `.angular-cli.json` file
+```
+...
+
+ "styles": [
+      "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "styles.css"
+      ],
+
+...
+
+```
+
+
