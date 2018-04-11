@@ -1,0 +1,65 @@
+<div class="container" style="min-height: 40px;"></div>
+
+<div class="container-fluid">
+	<div class="card" style="box-shadow: 5px 5px 5px #ccc;">
+		<div class="card-header">Filters</div>
+		<div class="card-body">
+			<div class="card-text">Filter 1</div>
+			<div class="card-text">Filter 2</div>
+			<div class="card-text">Filter 3</div>
+			<div class="card-text">Filter 4</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="min-height: 40px;"></div>
+
+<div class="container-fluid">
+	<div class="card" style="box-shadow: 5px 5px 5px #ccc;">
+		<div class="card-header">Listado de información</div>
+		<div class="card-body">
+			<h4 class="card-title">Tabla</h4>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<ng-template ngFor let-cell [ngForOf]="header" let-i="index">
+						<th *ngIf="showAllColumns || showColum[i]"><input
+							*ngIf="showAllColumns" type="checkbox" [checked]="showColum[i]"
+							(change)="showColum[i] = !showColum[i]" /> {{cell}}</th>
+						</ng-template>
+					</tr>
+				</thead>
+				<tbody>
+					<ng-template ngFor let-item [ngForOf]="data" let-i="index">
+					<tr (click)="selectedRow = item" [class.selected-row]="selectedRow == item">
+						<ng-template ngFor let-cell [ngForOf]="item" let-j="index">
+						<td *ngIf="showAllColumns || showColum[j]">{{cell}}</td>
+						</ng-template>
+					</tr>
+					</ng-template>
+				</tbody>
+			</table>
+
+			<h4 class="card-title">Options</h4>
+
+			<div class="card-text">
+				Show all columns <input type="checkbox" [checked]="showAllColumns"
+					(change)="showAllColumns = !showAllColumns" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="min-height: 40px;"></div>
+
+<div class="container-fluid">
+	<div class="card" style="box-shadow: 5px 5px 5px #ccc;">
+		<div class="card-header">Selected row</div>
+		<div class="card-body">
+			<div *ngFor="let item of selectedRow" class="card-text">{{item}}</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="min-height: 40px;"></div>
