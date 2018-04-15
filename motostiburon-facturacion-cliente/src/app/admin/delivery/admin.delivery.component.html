@@ -1,0 +1,44 @@
+
+<div class="container-fluid m-0 p-0">
+	<div class="card" style="box-shadow: 5px 5px 5px #ccc;">
+		<div class="card-header">Filters</div>
+		<div class="card-body">
+			<div class="card-text">Filter 1</div>
+			<div class="card-text">Filter 2</div>
+			<div class="card-text">Filter 3</div>
+			<div class="card-text">Filter 4</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="min-height: 40px;"></div>
+
+<table-custom [table]="myTable" [delegate]="this"></table-custom>
+
+
+<div class="container" style="min-height: 40px;"></div>
+
+<div class="container-fluid m-0 p-0">
+	<div class="card" style="box-shadow: 5px 5px 5px #ccc;">
+		<div class="card-header">Selected row</div>
+		<div class="card-body">
+			<div *ngFor="let key of myTable.ids" class="card-text">{{selectedRow[key]}}</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="min-height: 40px;"></div>
+
+
+<div class="container-fluid m-0 p-0">
+	<div class="card" style="box-shadow: 5px 5px 5px #ccc;">
+		<div class="card-header">Schedule</div>
+		<div class="card-body">
+			<schedule></schedule>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="min-height: 40px;"></div>
+
+
